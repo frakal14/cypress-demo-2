@@ -1,28 +1,26 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
+# env files 
+.env
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+# Test screenshots and videos
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
 
 
-# Dependency directories
+# Node.js dependencies
 node_modules/
-jspm_packages/
 
+# Environment configuration files
+.env
 
-# Optional npm cache directory
-.npm
+# IDE files
+.vscode/
+.idea/
 
-# Optional eslint cache
-.eslintcache
+# Test reports and logs
+reports/
+mochawesome-report/
 
-
-# Output of 'npm pack'
-*.tgz
-
+# Other temporary or generated files
+*.log
+*.swp
