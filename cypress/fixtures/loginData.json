@@ -1,5 +1,8 @@
 {
   "email": "test@example.com",
   "password": "Password123!",
-  "invalidUsername": "Frakal"
-}
+  "invalidEMail": "test",
+  "invalidPassword": "test",
+  "blankEmail": " ",
+  "blankPassword": " "
+  }

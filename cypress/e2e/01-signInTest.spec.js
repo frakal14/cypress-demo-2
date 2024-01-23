@@ -7,15 +7,27 @@ describe('Verify sign in page functionality ', () => {
 
     beforeEach('Open homepage', () => {
         cy.openHomePage()
+        onNavigation.clickOnSignIn()
     })
     
     it('User is able to sign in with correct data', () => {
-        onNavigation.clickOnSignIn()
         onSignInPage.fillSignInData(loginData.email, loginData.password)
         onSignInPage.emailInput.should('have.value', loginData.email)
         onSignInPage.passwordInput.should('have.value',loginData.password)
         onSignInPage.clickOnSignIn()
         cy.url().should('include', 'my-account')
+    })
+
+    it('Sign in form validation should trigger upon incorrect data', () => {
+        onSignInPage.fillSignInData(loginData.invalidEMail, loginData.password)
+        onSignInPage.clickOnSignIn()
+        onSignInPage.redAlertBox('Invalid email address.')
+        onSignInPage.fillSignInData(loginData.email, loginData.invalidPassword)
+        onSignInPage.clickOnSignIn()
+        onSignInPage.redAlertBox('Invalid password.')
+        onSignInPage.fillSignInData(loginData.blankEmail, loginData.password)
+        onSignInPage.clickOnSignIn()
+        onSignInPage.redAlertBox('An email address required.')
     })
 
 

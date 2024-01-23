@@ -1,4 +1,4 @@
-export class SignInPage{
+export class SignInPage {
 
     // Sign in page selectors
     get emailInput() {
@@ -25,6 +25,7 @@ export class SignInPage{
         return cy.get('#SubmitCreate')
     }
 
+
     //------------------------------------------------------------------------------------------------------------------------------------------------------------ 
     // Sign in page methods
 
@@ -49,6 +50,11 @@ export class SignInPage{
         this.createAccountBtn.click()
     }
 
+    redAlertBox(text) {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal(text)
+        }) 
+    }
 
 }
 
