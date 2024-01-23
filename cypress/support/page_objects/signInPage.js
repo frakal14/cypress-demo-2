@@ -2,7 +2,7 @@ export class SignInPage{
 
     // Sign in page selectors
     get emailInput() {
-        return cy.get('[name="email"]')
+        return cy.get('[name="email"]').first()
     }
 
     get passwordInput() {
@@ -14,11 +14,11 @@ export class SignInPage{
     }
 
     get signInBtn() {
-        return cy.get('#id="SubmitLogin"')
+        return cy.get('#SubmitLogin')
     }
     // Create account selectors
     get emailRegisterInput() {
-        return cy.get('[id="email_create"]')
+        return cy.get('#email_create')
     }
 
     get createAccountBtn() {
