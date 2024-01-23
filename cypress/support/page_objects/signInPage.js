@@ -10,7 +10,7 @@ export class SignInPage {
     }
 
     get forgotPassword() {
-        return cy.contains('Forgot your password?')
+        return cy.get('[title="Recover your forgotten password"]')
     }
 
     get signInBtn() {
@@ -25,6 +25,14 @@ export class SignInPage {
         return cy.get('#SubmitCreate')
     }
 
+    get forgotPasswordEmail() {
+        return cy.get('[name="email"]').first()
+    }
+
+    get forgotPasswordBtn() {
+        return cy.contains('Retrieve Password')
+    }
+
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------ 
     // Sign in page methods
@@ -35,7 +43,7 @@ export class SignInPage {
     }
 
     clickOnForgotPassword() {
-        this.forgotPassword.click()
+        this.forgotPassword.click({force: true})
     }
 
     clickOnSignIn() {
@@ -54,6 +62,22 @@ export class SignInPage {
         cy.on('window:alert', (str) => {
             expect(str).to.equal(text)
         }) 
+    }
+
+    greenAlertBox(text) {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal(text)
+        }) 
+    }
+
+    
+
+    fillForgotPasswordEmail(email) {
+        this.forgotPasswordEmail.clear().type(email)
+    }
+
+    clickOnForgotPasswordBtn() {
+        this.forgotPasswordBtn.click()
     }
 
 }
