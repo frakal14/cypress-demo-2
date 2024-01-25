@@ -30,14 +30,13 @@ describe('Verify sign in page functionality ', () => {
         onSignInPage.redAlertBox('An email address required.')
     })
 
-    it.only('User is able to retrieve password with filled in data', () => {
+    it('User is able to retrieve password with filled in data', () => {
         onSignInPage.clickOnForgotPassword()
         onSignInPage.clickOnForgotPasswordBtn()
         onSignInPage.redAlertBox('Invalid email address.')
         onSignInPage.fillForgotPasswordEmail(loginData.email)
         onSignInPage.clickOnForgotPasswordBtn()
         onSignInPage.greenAlertBox(`A confirmation email has been sent to your address: ${loginData.email}`)
-
     })
 
 
