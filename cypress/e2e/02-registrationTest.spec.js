@@ -1,6 +1,7 @@
 const { onSignInPage } = require("../support/page_objects/signInPage")
 const { onRegisterPage } = require("../support/page_objects/registerPage")
 const { onNavigation } = require("../support/page_objects/navigationPage")
+import { faker } from '@faker-js/faker'
 
 
 describe('Validate registration form functionality and elements', () => {
@@ -11,12 +12,14 @@ describe('Validate registration form functionality and elements', () => {
     })
 
     it('User is able to register with valid data', () => {
-        onSignInPage.fillCreateEmailInput('test@testqwerty1.com')
+        let email = faker.internet.exampleEmail()
+
+        onSignInPage.fillCreateEmailInput(email)
         onSignInPage.clickOnCreateAccountBtn()
         onRegisterPage.checkMrRadioBtn()
         onRegisterPage.fillFirstName('test')
         onRegisterPage.fillLastName('tester')
-        onRegisterPage.email.should('have.value', 'test@testqwerty1.com')
+        onRegisterPage.email.should('have.value', email)
         onRegisterPage.fillPassword('Password123!')
         onRegisterPage.pickDateOfBirth('1', 'October', '1990')
         onRegisterPage.checkNewsletterChkbox()
