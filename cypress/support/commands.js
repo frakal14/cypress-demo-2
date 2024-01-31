@@ -27,3 +27,12 @@
 Cypress.Commands.add('openHomePage', () => {
     cy.visit('/')
 })
+
+Cypress.Commands.add('login', () =>{
+    cy.visit('/')
+    cy.get('[class="login"]').click()
+    cy.get('[name="email"]').first().clear().type('test@example.com')
+    cy.get('[data-validate="isPasswd"]').clear().type('Password123!')
+    cy.get('#SubmitLogin').click()
+    cy.url().should('include', 'my-account')
+})
