@@ -31,10 +31,13 @@ describe('Validate My Account functionality', () => {
         onMyAccount.addNewAddressBtn.should('be.visible')
         onMyAccount.clickOnDeleteAddressBtn()
         onMyAccount.addNewAddressBtn.should('be.visible')
-
-
-
     })
+
+    // it('User is able to reorder from my account', () => {
+    //     onMyAccount.clickOnOrderHistory()
+    //     onMyAccount.clickOnReorder()
+        
+    // })
 
 
 

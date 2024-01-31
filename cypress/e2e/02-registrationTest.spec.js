@@ -2,6 +2,7 @@ const { onSignInPage } = require("../support/page_objects/signInPage")
 const { onRegisterPage } = require("../support/page_objects/registerPage")
 const { onNavigation } = require("../support/page_objects/navigationPage")
 import { faker } from '@faker-js/faker'
+import { onMyAccount } from '../support/page_objects/myAccountPage'
 
 
 describe('Validate registration form functionality and elements', () => {
@@ -27,7 +28,7 @@ describe('Validate registration form functionality and elements', () => {
         cy.url().should('contains', 'my-account')
     })
 
-
+    
 
 
 

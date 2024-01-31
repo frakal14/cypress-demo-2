@@ -77,6 +77,15 @@ get submitAddressBtn() {
     return cy.get('#submitAddress')
 }
 
+// Order History form selectors
+//---------------------------
+
+get reorderBtn() {
+    return cy.get('[title="Reorder"]')
+}
+
+
+
 // My Addresses form selectors
 //---------------------------
 
@@ -94,9 +103,11 @@ clickOnAddNewAddress() {
     this.addNewAddress.click()
 }
 
-clickOnDeleteAddressBtn() {
-    this.deleteAddressBtn.click()
+clickOnOrderHistory() {
+    this.orderHistory.click()
 }
+
+
 
 // New Address form methods
 //---------------------------
@@ -139,7 +150,16 @@ clickOnSaveAddressBtn() {
 
 // My  Address form methods
 //---------------------------
+clickOnDeleteAddressBtn() {
+    this.deleteAddressBtn.click()
+}
 
+// Order History form methods
+//---------------------------
+
+clickOnReorder() {
+    this.reorderBtn.click()
+}
 
 
 
