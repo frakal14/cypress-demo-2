@@ -12,8 +12,6 @@ describe('Validate My Account functionality', () => {
     })
 
     it('User is able to add a new address', () => {
-
-
         onMyAccount.clickOnAddNewAddress()
         onMyAccount.firstName.should('have.value', 'Karol')
         onMyAccount.lastName.should('have.value', 'test')

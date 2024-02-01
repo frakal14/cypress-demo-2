@@ -36,3 +36,14 @@ Cypress.Commands.add('login', () =>{
     cy.get('#SubmitLogin').click()
     cy.url().should('include', 'my-account')
 })
+
+Cypress.Commands.add('addProductToCart', () => {
+    cy.visit('http://www.automationpractice.pl/index.php?id_product=1&controller=product#/1-size-s/14-color-blue')
+    cy.get('[id="add_to_cart"]').click()
+    cy.get('[title="Proceed to checkout"]').click()
+
+
+
+
+
+})
